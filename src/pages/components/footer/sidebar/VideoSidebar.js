@@ -5,7 +5,7 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 
-function VideoSidebar() {
+function VideoSidebar({likes, messages, shares}) {
 
     const [liked, setLiked] = useState(false)
 
@@ -21,15 +21,15 @@ function VideoSidebar() {
             >
                 {liked ? <FavoriteOutlinedIcon fontSize='large' /> : <FavoriteBorderOutlinedIcon fontSize='large'/>}    
             
-            <p>{ liked ? 300 + 1 : 300 }</p>
+            <p>{ liked ? likes + 1 : likes }</p>
         </div>
         <div className='videoSidebar__options'>
             <ChatOutlinedIcon fontSize='large'/>
-            <p>200</p>
+            <p>{messages}</p>
         </div>
         <div className='videoSidebar__options'>
             <ShareOutlinedIcon fontSize='large'/>
-            <p>100</p>
+            <p>{shares}</p>
         </div>
     </div>
   )
